@@ -1,7 +1,7 @@
 <template>
   <div class="slider">
     <Splide :options="options" aria-label="My Favorite Images">
-      <SplideSlide v-for="(image, index) in images" :key="index">
+      <SplideSlide v-for="(image, index) in shuffleArray(images)" :key="index">
         <img :src="`/img/${image}`" alt="image" />
       </SplideSlide>
       <div class="splide__progress">
@@ -19,6 +19,19 @@
 <script setup>
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
 import "@splidejs/vue-splide/css";
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    // Generate a random index between 0 and i (inclusive)
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+
+    // Swap elements at i and randomIndex
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
 
 const options = {
   rewind: true,

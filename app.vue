@@ -1,8 +1,8 @@
 <template>
   <div class="container" @click="playAudio()">
     <ConfettiExplosion
-      :particleCount="200"
-      :force="0.3"
+      :particleCount="900"
+      :force="0.7"
       :duration="5000"
       :shouldDestroyAfterDone="false"
     />
