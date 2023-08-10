@@ -4,6 +4,14 @@
       <SplideSlide v-for="(image, index) in images" :key="index">
         <img :src="`/img/${image}`" alt="image" />
       </SplideSlide>
+      <div class="splide__progress">
+        <div class="splide__progress__bar"></div>
+      </div>
+
+      <button class="splide__toggle">
+        <span class="splide__toggle__play">Play</span>
+        <span class="splide__toggle__pause">Pause</span>
+      </button>
     </Splide>
   </div>
 </template>
@@ -16,6 +24,8 @@ const options = {
   rewind: true,
   perPage: 2,
   gap: "1rem",
+  autoplay: true,
+
   breakpoints: {
     1000: {
       perPage: 1,
@@ -82,14 +92,14 @@ const images = [
 
 <style scoped>
 .slider {
-  width: 80%;
-  height: 80%;
+  width: 1000px;
+  height: 500px;
   overflow: hidden;
 }
 
 img {
-  width: 100%;
-  height: 100%;
+  width: 450px;
+  height: 500px;
   object-fit: contain;
 }
 </style>
