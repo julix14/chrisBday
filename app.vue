@@ -1,5 +1,5 @@
 <template>
-  <div class="container" @click="playAudio()">
+  <div v-if="showContent" class="container">
     <ConfettiExplosion
       :particleCount="900"
       :force="0.7"
@@ -9,6 +9,10 @@
     <p class="happyBDay">Happy Birthday!!!</p>
     <ImgSlider />
   </div>
+  <div v-if="!showContent" class="modal">
+    <p class="happyBDay">We want to celebrate your birthday with you today!</p>
+    <button @click="hideModal()">Continue to you Party!</button>
+  </div>
 </template>
 
 <script setup>
@@ -17,14 +21,19 @@ import ImgSlider from "@/components/ImgSlider.vue";
 import ConfettiExplosion from "vue-confetti-explosion";
 import "regenerator-runtime/runtime";
 
-console.log("playing");
-
 function playAudio() {
   const audio = new Audio("/sounds/happyBirthday.mp3");
 
   audio.play();
   console.log("playing");
 }
+
+function hideModal() {
+  playAudio();
+  showContent.value = true;
+}
+
+const showContent = ref(false);
 </script>
 
 <style scoped>
@@ -61,6 +70,33 @@ function playAudio() {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  transition: 1s ease-in-out;
+}
+
+.modal {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.modal p {
+  font-size: 3.5rem;
+}
+
+.modal button {
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  background-color: #e16541;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: all 0.3s ease-in-out;
 }
 
 * {
