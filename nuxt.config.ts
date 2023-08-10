@@ -3,5 +3,7 @@ export default defineNuxtConfig({
   alias: {
     'assets': "/<rootDir>/assets",
   },
-  devtools: { enabled: true }
+  devtools: { enabled: true },
+
+
 })
