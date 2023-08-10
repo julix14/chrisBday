@@ -1,12 +1,11 @@
 <template>
-  <div class="container">
+  <div class="container" @click="playAudio()">
     <ConfettiExplosion
       :particleCount="200"
       :force="0.3"
       :duration="5000"
       :shouldDestroyAfterDone="false"
     />
-
     <p class="happyBDay">Happy Birthday!!!</p>
     <ImgSlider />
   </div>
@@ -17,6 +16,15 @@
 import ImgSlider from "@/components/ImgSlider.vue";
 import ConfettiExplosion from "vue-confetti-explosion";
 import "regenerator-runtime/runtime";
+
+console.log("playing");
+
+function playAudio() {
+  const audio = new Audio("/sounds/happyBirthday.mp3");
+
+  audio.play();
+  console.log("playing");
+}
 </script>
 
 <style scoped>
