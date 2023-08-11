@@ -39,6 +39,7 @@ const showContent = ref(false);
 <style scoped>
 .happyBDay {
   font-size: 7.5rem;
+  text-align: center;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: underline;
