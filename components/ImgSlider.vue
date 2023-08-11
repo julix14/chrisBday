@@ -1,8 +1,8 @@
 <template>
   <div class="slider">
-    <Splide :options="options" aria-label="My Favorite Images">
+    <Splide :tag="section" :options="options" aria-label="My Favorite Images">
       <SplideSlide v-for="(image, index) in shuffleArray(images)" :key="index">
-        <img :src="`/img/${image}`" alt="image" loading="lazy" />
+          <img :src="`/img/${image}`" alt="image" loading="lazy" />
       </SplideSlide>
     </Splide>
   </div>
@@ -27,13 +27,13 @@ function shuffleArray(array) {
 
 const options = {
   rewind: true,
-  perPage: 2,
-  gap: "1rem",
+  hasTrack: false,
+  perPage: 1,
   autoplay: true,
 
   breakpoints: {
     1000: {
-      perPage: 2,
+      perPage: 1,
     },
   },
 };
@@ -116,14 +116,16 @@ const images = [
 
 <style scoped>
 .slider {
-  width: 1000px;
-  height: 500px;
-  overflow: hidden;
+  display: flex;
+  height: 28rem;
+  width: 100%;
+  background-color: black;
+  border-radius: 5px;
 }
 
 img {
-  width: 450px;
-  height: 500px;
+  width: 100%;
+  height: 28rem;
   object-fit: contain;
 }
 </style>
