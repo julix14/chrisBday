@@ -4,9 +4,6 @@
       <SplideSlide v-for="(image, index) in shuffleArray(images)" :key="index">
         <img :src="`/img/${image}`" alt="image" loading="lazy" />
       </SplideSlide>
-      <div class="splide__progress">
-        <div class="splide__progress__bar"></div>
-      </div>
     </Splide>
   </div>
 </template>

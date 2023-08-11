@@ -4,7 +4,7 @@
       :particleCount="900"
       :force="0.7"
       :duration="5000"
-      :shouldDestroyAfterDone="false"
+      :shouldDestroyAfterDone="true"
     />
     <p class="happyBDay">Happy Birthday!!!</p>
     <ImgSlider />
