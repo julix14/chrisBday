@@ -2,16 +2,11 @@
   <div class="slider">
     <Splide :options="options" aria-label="My Favorite Images">
       <SplideSlide v-for="(image, index) in shuffleArray(images)" :key="index">
-        <img :src="`/img/${image}`" alt="image" />
+        <img :src="`/img/${image}`" alt="image" loading="lazy" />
       </SplideSlide>
       <div class="splide__progress">
         <div class="splide__progress__bar"></div>
       </div>
-
-      <button class="splide__toggle">
-        <span class="splide__toggle__play">Play</span>
-        <span class="splide__toggle__pause">Pause</span>
-      </button>
     </Splide>
   </div>
 </template>
@@ -41,7 +36,7 @@ const options = {
 
   breakpoints: {
     1000: {
-      perPage: 1,
+      perPage: 2,
     },
   },
 };
