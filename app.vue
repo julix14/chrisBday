@@ -7,6 +7,7 @@
         :particleCount="900"
         :force="0.7"
         :duration="5000"
+        :stageHeight="viewportHeight"
         :shouldDestroyAfterDone="true"
       />
     </div>
@@ -22,6 +23,11 @@ import ConfettiExplosion from "vue-confetti-explosion";
 import "regenerator-runtime/runtime";
 
 const showPictures = ref(false);
+const viewportHeight = ref(0);
+
+onMounted(() => {
+  viewportHeight.value = window.innerHeight;
+});
 
 function hideModal() {
   const audio = new Audio("/sounds/happyBirthday.mp3");
@@ -82,8 +88,6 @@ function hideModal() {
   position: absolute;
   inset: auto;
   top: 0;
-  height: 10vh;
-  z-index: 100;
   background-color: #476098;
 }
 
