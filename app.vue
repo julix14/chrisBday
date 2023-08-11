@@ -98,9 +98,10 @@ const showContent = ref(false);
   margin-top: 2rem;
   transition: all 0.3s ease-in-out;
 }
+</style>
 
+<style>
 * {
   margin: 0;
-  overflow: hidden;
 }
 </style>
