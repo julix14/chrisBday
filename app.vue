@@ -43,7 +43,6 @@ function hideModal() {
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }
-
 .colored-heading {
   font-size: 4rem;
   text-align: center;
@@ -79,7 +78,6 @@ function hideModal() {
 .orange-button:hover {
   opacity: 0.9;
 }
-
 .confetti-container {
   position: absolute;
   inset: auto;
